@@ -8,6 +8,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { testimonials } from "../../config/portfolio-config"
+import { Card, CardContent } from "./ui/card"
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -56,14 +57,18 @@ export default function Testimonials() {
           <p className="text-muted-foreground text-lg">Here's what people are saying about working with me</p>
         </motion.div>
 
-        <motion.div style={{ y, opacity }} className="relative max-w-4xl mx-auto">
+        <motion.div
+          style={{ y, opacity }}
+          className="relative max-w-4xl mx-auto"
+        >
           <div className="relative">
             <div className="absolute -top-10 -left-10 text-primary/20">
-              <Quote className="h-20 w-20" />
+              <Quote className="h-20 w-20 text-purple-400 text-bold shadow-2xs" />
             </div>
 
-            <div className="bg-card border rounded-2xl p-8 md:p-10 shadow-lg">
-              <div className="min-h-[200px]">
+            <Card className=" p-8 md:p-10 shadow-lg bg-black/30">
+              
+              <CardContent className="min-h-[200px] ">
                 {testimonials.map((testimonial, index) => (
                   <motion.div
                     key={testimonial.id}
@@ -76,45 +81,62 @@ export default function Testimonials() {
                     transition={{ duration: 0.5 }}
                     className={`${activeIndex !== index ? "hidden" : ""}`}
                   >
-                    <p className="text-lg md:text-xl italic mb-6">{testimonial.content}</p>
+                    <p className="text-lg md:text-xl italic mb-6 text-gray-200/80">
+                      {testimonial.content}
+                    </p>
                     <div className="flex items-center">
                       <Avatar className="h-12 w-12 mr-4">
-                        <AvatarImage src={testimonial.image || "/placeholder.svg"} alt={testimonial.name} />
+                        <AvatarImage
+                          src={testimonial.image || "/placeholder.svg"}
+                          alt={testimonial.name}
+                        />
                         <AvatarFallback>{testimonial.initials}</AvatarFallback>
                       </Avatar>
                       <div>
-                        <h4 className="font-bold">{testimonial.name}</h4>
-                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                        <h4 className="font-bold text-purple-400">{testimonial.name}</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </p>
                       </div>
                     </div>
                   </motion.div>
                 ))}
-              </div>
 
-              <div className="flex justify-between items-center mt-8">
-                <div className="flex space-x-2">
-                  {testimonials.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setActiveIndex(index)}
-                      className={`w-3 h-3 rounded-full transition-colors ${
-                        activeIndex === index ? "bg-primary" : "bg-muted"
-                      }`}
-                      aria-label={`Go to testimonial ${index + 1}`}
-                    />
-                  ))}
-                </div>
+                <div className="flex justify-between items-center mt-8">
+                  <div className="flex space-x-2">
+                    {testimonials.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setActiveIndex(index)}
+                        className={`w-3 h-3 rounded-full transition-colors ${
+                          activeIndex === index ? "bg-primary" : "bg-muted"
+                        }`}
+                        aria-label={`Go to testimonial ${index + 1}`}
+                      />
+                    ))}
+                  </div>
 
-                <div className="flex space-x-2">
-                  <Button variant="outline" size="icon" onClick={prevTestimonial}>
-                    <ChevronLeft className="h-5 w-5" />
-                  </Button>
-                  <Button variant="outline" size="icon" onClick={nextTestimonial}>
-                    <ChevronRight className="h-5 w-5" />
-                  </Button>
+                  <div className="flex space-x-5">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="hover:shadow-[0_0_20px_#9f7aea]  transition-colors bg-black hover:bg-black "
+                      onClick={prevTestimonial}
+                    >
+                      <ChevronLeft className="h-5 w-5 text-white hover:text-white" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      onClick={nextTestimonial}
+                       className="hover:shadow-[0_0_20px_#9f7aea]  transition-colors bg-black hover:bg-black "
+                    >
+                      <ChevronRight  className="h-5 w-5 text-white hover:text-white"  />
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </motion.div>
       </div>

@@ -1,3 +1,4 @@
+import { Mail, MapPin, Phone } from "lucide-react"
 
 
 // Personal Information
@@ -312,19 +313,19 @@ export const personalInfo = {
   // Contact Information
   export const contactInfo = [
     {
-      icon: "Mail",
+      icon: Mail,
       title: "Email",
       value: "ariunjargal.ochirpurev@gmail.com",
       link: "mailto:ariunjargal.ochirpurev@gmail.com",
     },
     {
-      icon: "Phone",
+      icon: Phone,
       title: "Phone",
       value: "+976 86981230",
       link: "tel:+97686981230",
     },
     {
-      icon: "MapPin",
+      icon: MapPin,
       title: "Location",
       value: "Ulaanbaatar, Mongolia",
       link: "https://maps.google.com/?q=Ulaanbaatar,+Mongolia",
