@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { ChevronLeft, ChevronRight, Code, CodeXml, Menu, Slash, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 
@@ -42,9 +42,9 @@ export default function HeaderBar({ activeSection }: HeaderProps) {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-          <Link href="#home" className="text-2xl font-bold group">
-            <span className="text-primary group-hover:text-foreground transition-colors">Port</span>
-            <span className="group-hover:text-primary transition-colors">folio</span>
+          <Link href="#home" className={`text-2xl font-bold group flex items-center gap-1 text-black ${isScrolled ? "text-gradient" : "text-black opacity-0"}` }>
+            <div className="text-primary group-hover:text-foreground transition-colors flex">Arii</div>
+            <div className="group-hover:text-primary transition-colors flex ">Portfolio</div>
           </Link>
         </motion.div>
 

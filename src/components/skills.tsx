@@ -1,4 +1,5 @@
-"use client";
+
+"use client"
 
 import {
   SiReact,
@@ -21,8 +22,8 @@ import {
   SiCss3,
   SiJavascript,
   SiRender,
-} from "react-icons/si";
-import { motion } from "framer-motion";
+} from "react-icons/si"
+import { motion } from "framer-motion"
 
 const skills = {
   Frontend: [
@@ -52,12 +53,12 @@ const skills = {
     { name: "Cypress", icon: SiCypress },
     { name: "Render", icon: SiRender },
   ],
-};
+}
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0 },
-};
+}
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -67,7 +68,7 @@ const staggerContainer = {
       staggerChildren: 0.2,
     },
   },
-};
+}
 
 export const Skills = () => {
   return (
@@ -80,18 +81,15 @@ export const Skills = () => {
           variants={staggerContainer}
           className="space-y-12"
         >
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-col items-center justify-center space-y-4 text-center"
-          >
+          <motion.div variants={fadeInUp} className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2 max-w-3xl">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-space text-white">
                 💻 My <span className="text-gradient">Full Stack</span> Skills
-              </h2>{" "}
+              </h2>
               <div className="h-1 w-50 bg-muted-foreground mx-auto my-4"></div>
               <p className="text-muted-foreground md:text-xl/relaxed">
-                I've worked with a variety of technologies and developed both
-                technical and soft skills. Here are my main areas of expertise:
+              I've worked with a variety of technologies and developed both technical and soft skills. Here are my main
+              areas of expertise:
               </p>
             </div>
           </motion.div>
@@ -104,20 +102,18 @@ export const Skills = () => {
               <motion.div
                 key={category}
                 variants={fadeInUp}
-                className="bg-card/30 backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-6 shadow-xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-1"
+                className="bg-transparent backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-6 shadow-xl hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-1"
               >
-                <h3 className="text-xl font-semibold mb-4 text-gradient">
-                  {category}
-                </h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gradient text-center">{category}</h3>
                 <div className="flex flex-wrap gap-3">
                   {items.map(({ name, icon: Icon }) => (
                     <motion.div
                       key={name}
                       whileHover={{ scale: 1.05, rotate: 2 }}
-                      className="flex items-center gap-2 bg-white/10 dark:bg-black/30 hover:bg-primary/20 text-foreground px-3 py-2 rounded-full transition-colors"
+                      className="flex items-center gap-2 text-white px-3 py-2 rounded-full transition-colors bg-black"
                     >
-                      <Icon className="text-lg text-primary" />
-                      <span className="text-sm">{name}</span>
+                      <Icon className="text-lg" />
+                      <span className="text-sm ">{name}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -125,19 +121,18 @@ export const Skills = () => {
             ))}
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="flex justify-center mt-12">
+          {/* <motion.div variants={fadeInUp} className="flex justify-center mt-12">
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-25"></div>
               <div className="relative px-7 py-4 bg-card/80 backdrop-blur-sm rounded-lg leading-none flex items-center">
                 <span className="text-muted-foreground">
-                  Always learning and exploring new technologies to stay at the
-                  cutting edge.
+                  Always learning and exploring new technologies to stay at the cutting edge.
                 </span>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}

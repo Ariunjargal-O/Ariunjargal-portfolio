@@ -9,6 +9,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { interests, personalInfo, stats } from "../../config/portfolio-config";
+import CvDownloadButton from "./CvDownloadButton";
 
 export default function About() {
   const ref = useRef(null);
@@ -22,7 +23,8 @@ export default function About() {
 
   return (
     <>
-      <section
+      <section 
+      
         id="about"
         ref={ref}
         className="py-20 md:py-32 relative overflow-hidden"
@@ -105,11 +107,11 @@ export default function About() {
                     </div>
 
                     {/* Info overlay */}
-                    <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                      <div className="text-white text-sm font-medium">
+                    <div className="absolute bottom-10 left-7 rounded-xl p-3 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                      <div className="text-white text-2xl font-medium">
                         {personalInfo.name}
                       </div>
-                      <div className="text-white/80 text-xs">
+                      <div className="text-white/80 text-sm">
                         {personalInfo.title}
                       </div>
                     </div>
@@ -130,9 +132,9 @@ export default function About() {
                     type: "spring",
                     stiffness: 120,
                   }}
-                  className="absolute -bottom-12 -right-12 bg-gradient-to-br from-white/90 via-white/80 to-white/70 backdrop-blur-xl p-2 rounded-3xl shadow-2xl border border-white/30 transition-all duration-500 transform hover:scale-110 hover:-rotate-2 hover:shadow-blue-500/30 hover:-translate-y-2 z-30"
+                  className="absolute -bottom-12 -right-12 bg-gradient-to-br from-white/80 via-white/70 to-white/60 backdrop-blur-xl p-2 rounded-3xl shadow-2xl border border-white/30 transition-all duration-500 transform hover:scale-110 hover:-rotate-2 hover:shadow-blue-500/30 hover:-translate-y-2 z-30 "
                 >
-                  <div className="grid grid-cols-2 gap-0">
+                  <div className="grid grid-cols-2 gap-4 border-2 border-gray-400 rounded-2xl p-4">
                     {stats.map((stat, i) => (
                       <motion.div
                         key={i}
@@ -146,7 +148,7 @@ export default function About() {
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover/stat:opacity-100 transition-opacity duration-300"></div>
 
                         <div className="relative z-10 p-2">
-                          <div className="text-4xl font-bold bg-gradient-to-r from-indigo-500 via-pink-500 to-purple-500 bg-clip-text text-transparent group-hover/stat:scale-110 transition-transform duration-300">
+                          <div className="text-4xl font-bold  bg-clip-text text-transparent group-hover/stat:scale-110 transition-transform duration-300 text-gradient">
                             {stat.value}
                           </div>
                           <div className="text-sm text-gray-600 font-medium">
@@ -196,15 +198,15 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-8 relative z-20" // Add this
           >
-            <div className="border-2 p-10 border-gray-200 rounded-md z-20 h-[500px]">
+            <div className="border-2 p-10 border-gray-200 rounded-md z-20 h-[560px]">
               <Tabs defaultValue="about" className="w-full">
                 <TabsList className="grid w-full grid-cols-3 gap-5">
-                  <TabsTrigger value="about" className="capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/20 backdrop-blur-sm ">About</TabsTrigger>
+                  <TabsTrigger value="about" className="capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/20  backdrop-blur-sm ">About</TabsTrigger>
                   <TabsTrigger value="education" className="capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/20 backdrop-blur-sm ">Education</TabsTrigger>
                   <TabsTrigger value="interests" className="capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/20 backdrop-blur-sm ">Interests</TabsTrigger>
                 </TabsList>
                 <TabsContent value="about" className="space-y-4 pt-4">
-                  <h3 className="text-2xl font-bold">
+                  <h3 className="text-2xl font-bold text-white">
                     A passionate {personalInfo.title} based in{" "}
                     {personalInfo.location}
                   </h3>
@@ -219,7 +221,7 @@ export default function About() {
                         <GraduationCap className="h-6 w-6 text-muted-foreground" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold">
+                        <h4 className="text-lg font-bold text-white">
                           Bachelor of Economic Managemant
                         </h4>
                         <p className="text-muted-foreground">Nagaoka University</p>
@@ -233,7 +235,7 @@ export default function About() {
                         <Award className="h-6 w-6 text-muted-foreground" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold ">
+                        <h4 className="text-lg font-bold text-white">
                           FullStack developer Certification
                         </h4>
                         <p className="text-muted-foreground">Pineconde Academy</p>
@@ -243,13 +245,13 @@ export default function About() {
                   </div>
                 </TabsContent>
                 <TabsContent value="interests" className="space-y-4 pt-4">
-                  <p className="text-muted-foreground">
+                  <p className="text-white">
                     When I'm not coding, you can find me:
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 ">
                     {interests.map((interest, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <span className="text-primary">•</span> {interest}
+                      <li key={index} className="flex items-center gap-2 text-white ml-2">
+                        <span className="text-white">•</span> {interest}
                       </li>
                     ))}
                   </ul>
@@ -275,7 +277,7 @@ export default function About() {
                 </div>
               </div>
 
-              {/* <CvDownloadButton /> */}
+              <CvDownloadButton />
             </div>
           </motion.div>
           </div>

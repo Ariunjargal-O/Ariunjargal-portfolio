@@ -243,7 +243,7 @@ export default function Home() {
           <div 
             className="absolute inset-0 w-full h-full z-0"
             style={{
-              background: "linear-gradient(to bottom, #000000 0%, #111111 100%)",
+              background: "linear-gradient(to bottom, #000000 0%, #050520 100%)",
             }}
           >
             {/* Stars layer - moves with scroll */}

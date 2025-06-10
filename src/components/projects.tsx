@@ -60,7 +60,9 @@ export default function Projects() {
                 key={category}
                 variant={filter === category ? "default" : "outline"}
                 onClick={() => setFilter(category)}
-                className="capitalize"
+                className={`capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/20 backdrop-blur-sm ${
+                  filter === category ? "bg-black/30 border-2 border-white/40 text-purple-400 hover:bg-[#171717] hover:text-white " : "text-muted-foreground border-muted-foreground"
+                }`}
               >
                 {category}
               </Button>
@@ -78,7 +80,7 @@ export default function Projects() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="group bg-card border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="group bg-black/30 border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 pb-5"
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
@@ -88,7 +90,7 @@ export default function Projects() {
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Button
-                      variant="outline"
+                  
                       size="icon"
                       className="bg-background/20 backdrop-blur-sm border-white/20 text-white hover:bg-background/30"
                       onClick={() => setSelectedProject(project)}
@@ -98,26 +100,26 @@ export default function Projects() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-white transition-colors text-white/60">{project.title}</h3>
                   <p className="text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.slice(0, 3).map((tech) => (
-                      <Badge key={tech} variant="secondary">
+                      <Badge key={tech} >
                         {tech}
                       </Badge>
                     ))}
                     {project.technologies.length > 3 && (
-                      <Badge variant="outline">+{project.technologies.length - 3}</Badge>
+                      <Badge >+{project.technologies.length - 3}</Badge>
                     )}
                   </div>
                   <div className="flex gap-3">
-                    <Button asChild variant="outline" size="sm" className="group/btn">
+                    <Button asChild  size="sm" className="group/btn">
                       <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                         <span className="ml-1 opacity-0 group-hover/btn:opacity-100 transition-opacity">→</span>
                       </Link>
                     </Button>
-                    <Button asChild variant="outline" size="sm" className="group/btn">
+                    <Button asChild size="sm" className="group/btn">
                       <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-4 w-4" /> Code
                         <span className="ml-1 opacity-0 group-hover/btn:opacity-100 transition-opacity">→</span>
@@ -140,13 +142,13 @@ export default function Projects() {
       </div>
 
       {/* Project Modal */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {selectedProject && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p4"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
@@ -215,7 +217,7 @@ export default function Projects() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </section>
   )
 }

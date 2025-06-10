@@ -54,7 +54,7 @@ export default function Hero() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="inline-block p-3 rounded-full bg-primary/10 text-2xl font-medium border-2 border-white text-gradient"
+                  className="inline-block p-3 rounded-full bg-primary/10 text-2xl font-medium border-2 border-white text-white"
                 >
                   WELCOME TO MY PORTFOLIO
                 </motion.span>
@@ -69,7 +69,7 @@ export default function Hero() {
                 >
                   <TypeAnimation
                     sequence={["Ariunjargal Ochirpurev", 5000, "Arii", 5000]}
-                    className="text-2xl md:text-4xl lg:text-5xl pl-10 text-white"
+                    className="text-2xl md:text-4xl lg:text-5xl pl-10  text-gradient"
                     wrapper="span"
                     speed={50}
                     repeat={Number.POSITIVE_INFINITY}
@@ -100,7 +100,7 @@ export default function Hero() {
               </p>
             </motion.div>
 
-            <p className="flex text-white mb-10 mt-5">
+            <p className="flex text-white mb-10 mt-8">
               <MapPin />
               Mongolia, Ulaanbaatar
             </p>
@@ -111,13 +111,13 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-wrap gap-4"
             >
-              <Button asChild size="lg" className="group">
+              <Button asChild size="lg" className="group bg-white/80 text-gray-800 border border-white hover:bg-white hover:text-black">
                 <Link href="#contact">
                   Contact Me{" "}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild className="group">
+              <Button variant="outline" size="lg" asChild className="group bg-transparent text-white">
                 <Link href="#projects">
                   View Projects{" "}
                   <motion.span
@@ -167,7 +167,7 @@ export default function Hero() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-10 h-10 rounded-full bg-card border hover:bg-primary/10 hover:text-primary transition-colors"
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-white/80 border hover:bg-white hover:text-primary transition-colors"
                   >
                     {social.icon}
                   </Link>
@@ -188,8 +188,7 @@ export default function Hero() {
                 height={700}
                 src="/profile.png"
                 alt="Ariunjargal Ochirpurev"
-                className="rounded-xl sm:rounded-2xl shadow-2xl group-hover:shadow-3xl transition-shadow duration-500 w-full h-auto
-              "
+                className="rounded-2xl w-full h-auto transform group-hover:scale-105 transition-all duration-700 filter group-hover:brightness-110 group-hover:contrast-110"
               />
 
               {/* Enhanced overlay effect */}

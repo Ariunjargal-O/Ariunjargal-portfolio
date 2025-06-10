@@ -1,6 +1,6 @@
 "use client";
 
-import type React from "react";
+import React from "react";
 
 import { useState, useRef, JSX } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -9,7 +9,7 @@ import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { contactInfo, socialLinks } from "../../config/portfolio-config";
+import { contactInfo, personalInfo, socialLinks } from "../../config/portfolio-config";
 import { toast } from "sonner";
 
 export default function Contact() {
@@ -92,7 +92,9 @@ export default function Contact() {
           >
             <Mail className="h-8 w-8  text-purple-500" />
           </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            Get In Touch
+          </h2>
           <div className="h-1 w-20 bg-muted-foreground mx-auto mb-4"></div>
           <p className="text-muted-foreground text-lg">
             Have a project in mind or want to collaborate? Feel free to reach
@@ -101,7 +103,7 @@ export default function Contact() {
         </motion.div>
 
         <motion.div style={{ y, opacity }}>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -109,11 +111,9 @@ export default function Contact() {
               transition={{ duration: 0.5 }}
               className="lg:col-span-1 space-y-6"
             >
-              <h3 className="text-2xl font-bold">Contact Information</h3>
+              <h3 className="text-2xl font-bold text-white">Contact Information</h3>
               <p className="text-muted-foreground">
-                Feel free to reach out to me through any of these channels. I'm
-                always open to discussing new projects, opportunities, or
-                partnerships.
+                Feel free to reach out through any of these channels. I'm always open to new projects or collaborations.
               </p>
 
               <div className="space-y-6 mt-8">
@@ -123,47 +123,22 @@ export default function Contact() {
                     href={info.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start gap-4 p-4 rounded-lg border bg-card hover:bg-accent/10 transition-colors"
-                    whileHover={{
-                      y: -5,
-                      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
-                    }}
+                    className="box-border flex items-start gap-4 p-5 rounded-lg border border-gray-700 hover:shadow-[0_0_20px_#9f7aea]  transition-colors"
+                    whileHover={{ y: -5 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <div className="p-2 bg-primary/10 rounded-md text-primary">
-                      {getIcon(info.icon)}
-                    </div>
+                    <div className="p-2 bg-gray-200/30 rounded-md text-primary">{React.createElement(info.icon)}</div>
                     <div>
-                      <h4 className="font-medium">{info.title}</h4>
-                      <p className="text-muted-foreground">{info.value}</p>
+                      <h4 className="font-medium text-purple-400">{info.title}</h4>
+                      <p className="text-gray-200  ">{info.value}</p>
                     </div>
                   </motion.a>
                 ))}
               </div>
 
-              <div className="pt-8">
-                <h4 className="text-lg font-bold mb-4">Follow Me</h4>
-                <div className="flex space-x-4">
-                  {Object.entries(socialLinks).map(([platform, url], i) => (
-                    <motion.a
-                      key={platform}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -5 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 20,
-                      }}
-                      className="w-10 h-10 rounded-full bg-card border flex items-center justify-center hover:bg-primary/10 hover:text-primary transition-colors"
-                    >
-                      <span className="sr-only">{platform}</span>
-                      <i className={`fab fa-${platform}`}></i>
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
+              
+               
+              
             </motion.div>
 
             <motion.div
@@ -177,30 +152,24 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="bg-card p-8 rounded-lg border h-full flex flex-col items-center justify-center text-center"
+                  className=" p-8 rounded-lg border border-gray-200 h-full flex flex-col items-center justify-center text-center"
                 >
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-gray-200/30 flex items-center justify-center mb-6">
                     <CheckCircle className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-                  <p className="text-muted-foreground mb-6">
-                    Thank you for reaching out. I'll get back to you as soon as
-                    possible.
+                  <p className="text-gray-200 mb-6">
+                    Thank you for reaching out. I'll get back to you as soon as possible.
                   </p>
-                  <Button onClick={() => setIsSubmitted(false)}>
-                    Send Another Message
-                  </Button>
+                  <Button onClick={() => setIsSubmitted(false)}>Send Another Message</Button>
                 </motion.div>
               ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  className="space-y-6 bg-card p-8 rounded-lg border shadow-sm"
-                >
+                <form onSubmit={handleSubmit} className="space-y-6  p-10 rounded-lg border border-gray-700 shadow-sm">
                   <h3 className="text-2xl font-bold">Send a Message</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Your Name
+                      <label htmlFor="name" className="text-sm font-medium text-gray-200">
+                      {personalInfo.name}
                       </label>
                       <Input
                         id="name"
@@ -209,12 +178,11 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="border-muted-foreground/20 focus:border-primary"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Your Email
+                      <label htmlFor="email" className="text-sm font-medium text-gray-200">
+                        {personalInfo.email}
                       </label>
                       <Input
                         id="email"
@@ -224,12 +192,11 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="border-muted-foreground/20 focus:border-primary"
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
+                    <label htmlFor="subject" className="text-sm font-medium text-gray-200">
                       Subject
                     </label>
                     <Input
@@ -239,11 +206,10 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="border-muted-foreground/20 focus:border-primary"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
+                    <label htmlFor="message" className="text-sm font-medium text-gray-200">
                       Message
                     </label>
                     <Textarea
@@ -254,20 +220,15 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="border-muted-foreground/20 focus:border-primary resize-none"
+                      className="resize-none"
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    className="w-full group"
-                    disabled={isSubmitting}
-                  >
+                  <Button type="submit" className="w-full group cursor-pointer bg-white  border-2 border-black  hover:text-white  hover:shadow-[0_0_20px_#9f7aea]" variant={"outline"} disabled={isSubmitting}>
                     {isSubmitting ? (
                       <>Processing...</>
                     ) : (
                       <>
-                        Send Message{" "}
-                        <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        Send Message <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 hover:shadow-[0_0_20px_#9f7aea]  transition-transform " />
                       </>
                     )}
                   </Button>
