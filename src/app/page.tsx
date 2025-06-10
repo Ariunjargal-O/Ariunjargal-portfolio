@@ -341,7 +341,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <HeaderBar />
+          <HeaderBar activeSection="home" />
           <ScrollIndicator />
           <main className="relative z-10">
             <Hero />
