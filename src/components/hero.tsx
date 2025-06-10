@@ -54,7 +54,7 @@ export default function Hero() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="inline-block p-2  rounded-full bg-primary/10 text-gray-200 text-2xl font-medium border border-white"
+                  className="inline-block p-3 rounded-full bg-primary/10 text-2xl font-medium border-2 border-white text-gradient"
                 >
                   WELCOME TO MY PORTFOLIO
                 </motion.span>
@@ -188,7 +188,8 @@ export default function Hero() {
                 height={700}
                 src="/profile.png"
                 alt="Ariunjargal Ochirpurev"
-                className="rounded-xl sm:rounded-2xl shadow-2xl group-hover:shadow-3xl transition-shadow duration-500 w-full h-auto"
+                className="rounded-xl sm:rounded-2xl shadow-2xl group-hover:shadow-3xl transition-shadow duration-500 w-full h-auto
+              "
               />
 
               {/* Enhanced overlay effect */}

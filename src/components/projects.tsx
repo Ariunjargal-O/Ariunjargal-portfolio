@@ -37,17 +37,18 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
-            className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6"
-          >
-            <Layers className="h-8 w-8 text-primary" />
-          </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
-          <div className="h-1 w-20 bg-primary mx-auto mb-8"></div>
+
+           <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
+              className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-emerald-500/20 backdrop-blur-sm border border-white/30 flex items-center justify-center mx-auto mb-6 shadow-2xl hover:scale-110 transition-transform duration-300"
+            >
+             <Layers className="h-8 w-8 text-purple-500" />
+            </motion.div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">My Projects</h2>
+          <div className="h-1 w-20 bg-muted-foreground mx-auto mb-4"></div>
           <p className="text-muted-foreground text-lg mb-8">
             Here are some of my recent projects. Each one was built to solve a specific problem or explore new
             technologies.
@@ -131,7 +132,7 @@ export default function Projects() {
 
         <div className="text-center mt-12">
           <Button asChild className="group">
-            <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/Ariunjargal-O" target="_blank" rel="noopener noreferrer">
               View All Projects <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>

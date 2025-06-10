@@ -42,7 +42,7 @@ export default function About() {
               transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
               className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-emerald-500/20 backdrop-blur-sm border border-white/30 flex items-center justify-center mx-auto mb-6 shadow-2xl hover:scale-110 transition-transform duration-300"
             >
-              <Briefcase className="h-10 w-10 text-blue-600" />
+              <Briefcase className="h-10 w-10  text-purple-500" />
             </motion.div>
 
             <motion.h2
@@ -50,9 +50,10 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent animate-gradient"
+              className="text-4xl md:text-5xl font-bold mb-4 text-white"
             >
               About Me
+                    <div className="h-1 w-20 bg-muted-foreground mx-auto my-4"></div>
             </motion.h2>
 
             <motion.p
@@ -118,7 +119,7 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-3xl blur-xl translate-y-8 -z-10 opacity-60"></div>
                 </motion.div>
 
-                {/* Stats section - enhanced hover effects */}
+                {/* Zurag deerh turshlaga heseg */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8, rotateX: -20 }}
                   whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
@@ -129,9 +130,9 @@ export default function About() {
                     type: "spring",
                     stiffness: 120,
                   }}
-                  className="absolute -bottom-12 -right-12 bg-gradient-to-br from-white/90 via-white/80 to-white/70 backdrop-blur-xl p-8 rounded-3xl shadow-2xl border border-white/30 transition-all duration-500 transform hover:scale-110 hover:-rotate-2 hover:shadow-blue-500/30 hover:-translate-y-2"
+                  className="absolute -bottom-12 -right-12 bg-gradient-to-br from-white/90 via-white/80 to-white/70 backdrop-blur-xl p-2 rounded-3xl shadow-2xl border border-white/30 transition-all duration-500 transform hover:scale-110 hover:-rotate-2 hover:shadow-blue-500/30 hover:-translate-y-2 z-30"
                 >
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-2 gap-0">
                     {stats.map((stat, i) => (
                       <motion.div
                         key={i}
@@ -145,7 +146,7 @@ export default function About() {
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover/stat:opacity-100 transition-opacity duration-300"></div>
 
                         <div className="relative z-10 p-2">
-                          <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover/stat:scale-110 transition-transform duration-300">
+                          <div className="text-4xl font-bold bg-gradient-to-r from-indigo-500 via-pink-500 to-purple-500 bg-clip-text text-transparent group-hover/stat:scale-110 transition-transform duration-300">
                             {stat.value}
                           </div>
                           <div className="text-sm text-gray-600 font-medium">
@@ -174,7 +175,7 @@ export default function About() {
                     type: "spring",
                     stiffness: 150,
                   }}
-                  className="absolute -top-10 -left-10 bg-gradient-to-br from-yellow-400/90 to-orange-500/90 p-5 rounded-full shadow-2xl border-4 border-white/50 transition-all duration-500 transform hover:scale-125 hover:rotate-12 hover:shadow-yellow-500/50 hover:-translate-y-2 cursor-pointer"
+                  className="absolute -top-10 -left-10 bg-gradient-to-br from-purple-500/100 to-pink-500/90 p-5 rounded-full shadow-2xl border-4 border-white/50 transition-all duration-500 transform hover:scale-125 hover:rotate-12 hover:shadow-yellow-500/50 hover:-translate-y-2 cursor-pointer z-30"
                 >
                   <Award className="h-12 w-12 text-white drop-shadow-lg" />
 

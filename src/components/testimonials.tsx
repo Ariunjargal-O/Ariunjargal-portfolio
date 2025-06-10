@@ -47,12 +47,12 @@ export default function Testimonials() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
-            className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6"
+              className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-emerald-500/20 backdrop-blur-sm border border-white/30 flex items-center justify-center mx-auto mb-6 shadow-2xl hover:scale-110 transition-transform duration-300"
           >
-            <MessageSquare className="h-8 w-8 text-primary" />
+            <MessageSquare className="h-8 w-8 text-purple-500" />
           </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
-          <div className="h-1 w-20 bg-primary mx-auto mb-8"></div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Client Testimonials</h2>
+          <div className="h-1 w-20 bg-muted-foreground mx-auto mb-4"></div>
           <p className="text-muted-foreground text-lg">Here's what people are saying about working with me</p>
         </motion.div>
 
