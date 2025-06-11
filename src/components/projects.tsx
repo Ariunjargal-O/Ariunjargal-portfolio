@@ -218,6 +218,8 @@ export default function Projects() {
           </motion.div>
         )}
       </AnimatePresence> */}
+
+    {/* {} */}
     </section>
   )
 }
