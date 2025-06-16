@@ -2,13 +2,10 @@
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
-import Footer from "@/components/footer";
-import HeaderBar from "@/components/header";
 import Hero from "@/components/hero";
 import Loader from "@/components/loading";
 import Projects from "@/components/projects";
 import { ScrollIndicator } from "@/components/scroll-inducator";
-
 import SkillsBanner from "@/components/skills-banner";
 import Testimonials from "@/components/testimonials";
 import { useEffect, useRef, useState } from "react";
@@ -19,109 +16,66 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { Skills } from "@/components/skills";
+import HeaderBar from "@/components/Header";
+import Footer from "@/components/Footer";
+
 
 const ShootingStar: React.FC<{ delay: number }> = ({ delay }) => {
-  const startX = Math.random() * window.innerWidth;
-  const startY = Math.random() * window.innerHeight * 0.7;
-  const endX = startX + (Math.random() * 800 + 400);
-  const endY = startY + (Math.random() * 400 + 200);
-  
+  const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
+  const [endPosition, setEndPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight * 0.7;
+    const endX = startX + (Math.random() * 400 + 200);
+    const endY = startY + (Math.random() * 200 + 100);
+    
+    setStartPosition({ x: startX, y: startY });
+    setEndPosition({ x: endX, y: endY });
+  }, []);
+
   return (
     <motion.div
       className="absolute"
       style={{
-        left: startX,
-        top: startY,
+        left: startPosition.x,
+        top: startPosition.y,
       }}
       initial={{ x: 0, y: 0, opacity: 0 }}
       animate={{
-        x: endX - startX,
-        y: endY - startY,
+        x: endPosition.x - startPosition.x,
+        y: endPosition.y - startPosition.y,
         opacity: [0, 1, 1, 0.5, 0],
       }}
       transition={{
-        duration: Math.random() * 2 + 1,
+        duration: Math.random() * 1.5 + 0.8,
         delay,
         repeat: Infinity,
-        repeatDelay: Math.random() * 30 + 20,
+        repeatDelay: Math.random() * 15 + 10,
         ease: "easeOut",
       }}
     >
-      {/* Main star body */}
       <div
-        className="relative w-2 h-2 bg-white rounded-full"
+        className="w-2 h-2 bg-white rounded-full"
         style={{
-          boxShadow: `
-            0 0 6px #fff,
-            0 0 12px #fff,
-            0 0 18px #87ceeb
-          `,
+          boxShadow: "0 0 6px #fff, 0 0 12px #87ceeb",
         }}
       />
-      
-      {/* Trailing particles */}
-      {Array.from({ length: 5 }).map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-white rounded-full"
-          style={{
-            left: -i * 3 - 2,
-            top: 2,
-            opacity: 0.8 - i * 0.15,
-          }}
-          animate={{
-            opacity: [0.8 - i * 0.15, 0],
-            scale: [1, 0.5],
-          }}
-          transition={{
-            duration: 0.5,
-            delay: i * 0.1,
-            repeat: Infinity,
-            repeatDelay: Math.random() * 30 + 20,
-          }}
-        />
-      ))}
     </motion.div>
-  );
-};
-
-const Constellation: React.FC<{ points: { x: number; y: number }[] }> = ({ points }) => {
-  return (
-    <svg className="absolute inset-0 w-full h-full pointer-events-none">
-      {points.map((point, index) => {
-        if (index === points.length - 1) return null;
-        const nextPoint = points[index + 1];
-        return (
-          <motion.line
-            key={index}
-            x1={`${point.x}%`}
-            y1={`${point.y}%`}
-            x2={`${nextPoint.x}%`}
-            y2={`${nextPoint.y}%`}
-            stroke="rgba(255, 255, 255, 0.2)"
-            strokeWidth="0.5"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{
-              duration: 2,
-              delay: index * 0.5,
-              repeat: Infinity,
-              repeatType: "reverse",
-              repeatDelay: 10,
-            }}
-          />
-        );
-      })}
-    </svg>
   );
 };
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("home");
+  const [mounted, setMounted] = useState(false);
+
+  // Client-side дээр л ажиллах
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
-    // Simulate loading
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -129,53 +83,14 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section[id]");
-      const scrollPosition = window.scrollY + 300;
-
-      sections.forEach((section) => {
-        const sectionId = section.getAttribute("id") || "";
-        const sectionTop = (section as HTMLElement).offsetTop;
-        const sectionHeight = (section as HTMLElement).offsetHeight;
-
-        if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
-        ) {
-          setActiveSection(sectionId);
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const ref = useRef(null);
-  const containerRef = useRef(null);
-  
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
-  
-  const { scrollYProgress: containerScrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const starsY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  // constellationsY removed
-  const shootingStarsY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-  const nebulasY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const opacity = useTransform(
-    containerScrollYProgress,
-    [0, 0.1, 0.9, 1],
-    [0.7, 1, 1, 0.7]
-  );
+
   interface Star {
     id: number;
     size: number;
@@ -184,42 +99,71 @@ export default function Home() {
     animationDuration: number;
     delay: number;
     brightness: number;
-    twinkle: boolean;
   }
 
   const [stars, setStars] = useState<Star[]>([]);
-  const [shootingStars, setShootingStars] = useState<
-    { id: number; delay: number }[]
-  >([]);
-  // Removed constellations state
 
   useEffect(() => {
-    // Generate massive amount of stars
-    const newStars = Array.from({ length: 10000 }).map((_, i) => ({
+    if (!mounted) return;
+    
+    // Одод үүсгэх (жижиг тоо - өндөр ачаалал багасгах)
+    const newStars = Array.from({ length: 1000 }).map((_, i) => ({
       id: i,
-      size: Math.random() < 0.95 
-        ? Math.random() * 1.2 + 0.3  // Tiny stars
-        : Math.random() * 2.5 + 1.5, // Brighter stars
+      size:
+        Math.random() < 0.9
+          ? Math.random() * 0.8 + 0.2 // Жижиг одод
+          : Math.random() * 1.5 + 1, // Том одод
       top: Math.random() * 100,
       left: Math.random() * 100,
-      animationDuration: Math.random() * 5 + 4,
-      delay: Math.random() * 8,
-      brightness: Math.random() * 0.9 + 0.2,
-      twinkle: Math.random() > 0.8,
+      animationDuration: Math.random() * 3 + 3,
+      delay: Math.random() * 5,
+      brightness: Math.random() * 0.7 + 0.3,
     }));
-
-    // Generate more shooting stars
-    const newShootingStars = Array.from({ length: 12 }).map((_, i) => ({
-      id: i,
-      delay: Math.random() * 25,
-    }));
-
-    // Removed constellation generation
 
     setStars(newStars);
-    setShootingStars(newShootingStars);
-    // Removed setConstellations
-  }, []);
+  }, [mounted]);
+
+  useEffect(() => {
+    if (loading) return;
+
+    const handleScroll = () => {
+      const sections = [
+        { id: "home", element: document.getElementById("home") },
+        { id: "about", element: document.getElementById("about") },
+        { id: "skills", element: document.getElementById("skills") },
+        { id: "projects", element: document.getElementById("projects") },
+        { id: "experience", element: document.getElementById("experience") },
+        { id: "testimonials", element: document.getElementById("testimonials") },
+        { id: "contact", element: document.getElementById("contact") },
+      ];
+
+      const scrollPosition = window.scrollY + 200; // Header offset
+      let currentSection = "home";
+
+      sections.forEach((section) => {
+        if (section.element) {
+          const sectionTop = section.element.offsetTop;
+          const sectionHeight = section.element.offsetHeight;
+          const sectionBottom = sectionTop + sectionHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            currentSection = section.id;
+          }
+        }
+      });
+
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+        currentSection = "contact";
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial call
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loading]);
 
   return (
     <AnimatePresence mode="wait">
@@ -239,112 +183,66 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="relative min-h-screen overflow-x-hidden"
         >
-          {/* Main starry background */}
-          <div 
-            className="absolute inset-0 w-full h-full z-0"
+          {/* Одны дэвсгэр */}
+          <div
+            className="fixed inset-0 w-full h-full z-0"
             style={{
-              background: "linear-gradient(to bottom, #000000 0%, #050520 100%)",
+              background:
+                "linear-gradient(to bottom, #000011 0%, #001122 100%)",
             }}
           >
-            {/* Stars layer - moves with scroll */}
-            <motion.div 
-              className="absolute inset-0 w-full h-full"
-              style={{ 
-                opacity,
-                y: starsY
-              }}
-            >
-              {stars.map((star) => (
-                <motion.div
-                  key={star.id}
-                  className="absolute rounded-full"
-                  style={{
-                    width: star.size,
-                    height: star.size,
-                    top: `${star.top}%`,
-                    left: `${star.left}%`,
-                    background: star.size > 2 
-                      ? `radial-gradient(circle, rgba(255, 255, 255, ${star.brightness}) 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%)`
-                      : '#ffffff',
-                    boxShadow: star.size > 2
-                      ? `0 0 ${star.size * 3}px rgba(255, 255, 255, 0.8), 0 0 ${star.size * 6}px rgba(255, 255, 255, 0.4)`
-                      : `0 0 2px rgba(255, 255, 255, ${star.brightness})`,
-                  }}
-                  animate={
-                    star.twinkle
-                      ? {
-                          opacity: [star.brightness * 0.3, star.brightness, star.brightness * 0.5, star.brightness],
-                          scale: [0.8, 1.2, 0.9, 1],
-                        }
-                      : {
-                          opacity: [star.brightness * 0.7, star.brightness, star.brightness * 0.8],
-                        }
-                  }
-                  transition={{
-                    duration: star.animationDuration,
-                    repeat: Infinity,
-                    delay: star.delay,
-                    ease: "easeInOut",
-                  }}
-                />
-              ))}
-            </motion.div>
+            {/* Хялбар одод - зөвхөн client дээр */}
+            {mounted && (
+              <div className="absolute inset-0 w-full h-full">
+                {stars.map((star) => (
+                  <div
+                    key={star.id}
+                    className="absolute rounded-full bg-white"
+                    style={{
+                      width: star.size,
+                      height: star.size,
+                      top: `${star.top}%`,
+                      left: `${star.left}%`,
+                      opacity: star.brightness,
+                    }}
+                  />
+                ))}
+              </div>
+            )}
 
-            {/* Constellations removed */}
+            {/* Онцгой од */}
+            {mounted && (
+              <div
+                className="absolute w-4 h-4 bg-white rounded-full animate-pulse"
+                style={{
+                  top: "20%",
+                  right: "15%",
+                  boxShadow: `
+                    0 0 10px rgba(255, 255, 255, 0.8),
+                    0 0 20px rgba(255, 255, 255, 0.6),
+                    0 0 30px rgba(135, 206, 235, 0.4),
+                    0 0 40px rgba(135, 206, 235, 0.2)
+                  `,
+                }}
+              />
+            )}
 
-            {/* Shooting stars - move with scroll */}
-            <motion.div 
-              className="absolute inset-0 w-full h-full overflow-hidden"
-              style={{ 
-                y: shootingStarsY
-              }}
-            >
-              {shootingStars.map((star) => (
-                <ShootingStar key={star.id} delay={star.delay} />
-              ))}
-            </motion.div>
-
-            {/* Distant galaxies/nebulas - move with scroll */}
-            <motion.div 
-              className="absolute inset-0 w-full h-full"
-              style={{ 
-                y: nebulasY
-              }}
-            >
-              {Array.from({ length: 4 }).map((_, i) => (
-                <motion.div
-                  key={`nebula-${i}`}
-                  className="absolute rounded-full"
-                  style={{
-                    width: Math.random() * 300 + 150,
-                    height: Math.random() * 300 + 150,
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                    background: i % 2 === 0
-                      ? `radial-gradient(circle, rgba(138, 43, 226, 0.03) 0%, rgba(75, 0, 130, 0.015) 50%, transparent 80%)`
-                      : `radial-gradient(circle, rgba(30, 144, 255, 0.025) 0%, rgba(0, 191, 255, 0.012) 50%, transparent 80%)`,
-                    filter: 'blur(1px)',
-                  }}
-                  animate={{
-                    opacity: [0.05, 0.15, 0.05],
-                    scale: [0.9, 1.1, 0.9],
-                    rotate: [0, 360],
-                  }}
-                  transition={{
-                    duration: Math.random() * 30 + 40,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    delay: Math.random() * 10,
-                  }}
-                />
-              ))}
-            </motion.div>
+            {/* Унадаг одод */}
+            {mounted && (
+              <div className="absolute inset-0 w-full h-full overflow-hidden">
+                {Array.from({ length: 3 }).map((_, i) => (
+                  <ShootingStar key={i} delay={Math.random() * 10} />
+                ))}
+              </div>
+            )}
           </div>
 
-          <HeaderBar activeSection="home" />
+          <HeaderBar activeSection={activeSection} />
           <ScrollIndicator />
-          <main className="relative z-10">
-            <Hero />
+          <main className="relative z-10" ref={ref}>
+            <motion.div style={{ opacity: heroOpacity }}>
+              <Hero />
+            </motion.div>
             <About />
             <SkillsBanner />
             <Skills />
@@ -352,8 +250,8 @@ export default function Home() {
             <Experience />
             <Testimonials />
             <Contact />
+            <Footer />
           </main>
-          <Footer />
         </motion.div>
       )}
     </AnimatePresence>

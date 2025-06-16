@@ -194,3 +194,69 @@
   background-size: 400% 400%;
   animation: pulse-gradient 15s ease infinite;
 }
+
+
+
+/* globals.css эсвэл main CSS файлд нэмэх */
+
+/* Enhanced smooth scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Header height */
+}
+
+/* Section margin adjustment */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Smooth scroll for all anchors */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections have proper spacing */
+section[id] {
+  position: relative;
+}
+
+/* Remove any conflicting scroll behavior */
+body {
+  scroll-behavior: smooth;
+}
+
+/* For webkit browsers */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Accessibility: respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  * {
+    scroll-behavior: auto;
+  }
+}
+
+/* Custom scrollbar styling (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

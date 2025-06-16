@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import {  Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -37,19 +36,35 @@ export default function HeaderBar({ activeSection }: HeaderProps) {
     }
   }, [mobileMenuOpen])
 
+  // Smooth scroll function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const headerHeight = 80 // Header height offset
+      const elementPosition = element.offsetTop
+      const offsetPosition = elementPosition - headerHeight
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+    setMobileMenuOpen(false) // Close mobile menu
+  }
+
   // Close mobile menu when clicking on nav links
   const handleNavClick = () => {
     setMobileMenuOpen(false)
   }
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Skills", id: "skills" },
+    { name: "Projects", id: "projects" },
+    { name: "Experience", id: "experience" },
+    { name: "Testimonials", id: "testimonials" },
+    { name: "Contact", id: "contact" },
   ]
 
   // Prevent hydration mismatch
@@ -91,12 +106,11 @@ export default function HeaderBar({ activeSection }: HeaderProps) {
             transition={{ duration: 0.5 }}
             className="flex-shrink-0"
           >
-            <Link 
-              href="#home" 
-              className={`text-xl sm:text-2xl lg:text-3xl font-bold group flex items-center gap-1 transition-all duration-300 ${
+            <button 
+              onClick={() => scrollToSection("home")}
+              className={`text-xl sm:text-2xl lg:text-3xl font-bold group flex items-center gap-1 transition-all duration-300 cursor-pointer ${
                 isScrolled ? "text-foreground" : "text-foreground/90"
               }`}
-              onClick={handleNavClick}
             >
               <span className={`text-primary group-hover:text-primary/80 transition-colors ${isScrolled ? "opacity-100" :"opacity-0"}`}>
                 Arii's
@@ -104,7 +118,7 @@ export default function HeaderBar({ activeSection }: HeaderProps) {
               <span className={`group-hover:text-primary transition-colors text-gradient ${isScrolled? "opacity-100" :"opacity-0"}`}>
                 Portfolio
               </span>
-            </Link>
+            </button>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -117,23 +131,23 @@ export default function HeaderBar({ activeSection }: HeaderProps) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Link
-                    href={link.href}
-                    className={`relative px-3 lg:px-4 py-2 rounded-full text-sm lg:text-base font-medium transition-all duration-200 hover:scale-105 ${
-                      activeSection === link.href.substring(1)
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className={`relative px-3 lg:px-4 py-2 rounded-full text-sm lg:text-base font-medium transition-all duration-200 hover:scale-105 cursor-pointer ${
+                      activeSection === link.id
                         ? "text-primary"
                         : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     {link.name}
-                    {activeSection === link.href.substring(1) && (
+                    {activeSection === link.id && (
                       <motion.span
                         className="absolute inset-0 rounded-full bg-primary/10 border border-primary/20"
                         layoutId="activeSection"
                         transition={{ type: "spring", duration: 0.6 }}
                       />
                     )}
-                  </Link>
+                  </button>
                 </motion.li>
               ))}
             </ul>
@@ -201,24 +215,23 @@ export default function HeaderBar({ activeSection }: HeaderProps) {
                         ease: "easeOut"
                       }}
                     >
-                      <Link
-                        href={link.href}
-                        className={`flex items-center py-3 px-4 rounded-lg transition-all duration-200 hover:scale-[1.02] ${
-                          activeSection === link.href.substring(1)
+                      <button
+                        onClick={() => scrollToSection(link.id)}
+                        className={`flex items-center w-full py-3 px-4 rounded-lg transition-all duration-200 hover:scale-[1.02] cursor-pointer text-left ${
+                          activeSection === link.id
                             ? "bg-primary/15 text-primary font-semibold border-l-4 border-primary"
                             : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                         }`}
-                        onClick={handleNavClick}
                       >
                         <span className="text-base">{link.name}</span>
-                        {activeSection === link.href.substring(1) && (
+                        {activeSection === link.id && (
                           <motion.div
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             className="ml-auto w-2 h-2 bg-primary rounded-full"
                           />
                         )}
-                      </Link>
+                      </button>
                     </motion.li>
                   ))}
                 </ul>

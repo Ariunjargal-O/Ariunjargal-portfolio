@@ -20,7 +20,7 @@ export default function About() {
 
   return (
     <>
-      <section 
+      <section
         id="about"
         ref={ref}
         className="py-16 sm:py-20 md:py-32 relative overflow-hidden"
@@ -68,10 +68,9 @@ export default function About() {
 
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-35 lg:gap-20 items-center">
-            
             {/* Image Section */}
-            <motion.div 
-              style={{ y, opacity }} 
+            <motion.div
+              style={{ y, opacity }}
               className="relative order-1 lg:order-1 px-4 sm:px-8 lg:px-0"
             >
               <div className="relative group max-w-sm sm:max-w-md lg:max-w-full mx-auto">
@@ -202,27 +201,11 @@ export default function About() {
             >
               <div className="border-2 p-4 sm:p-6 lg:p-10 border-gray-200 rounded-md z-20 min-h-[500px] sm:min-h-[560px]">
                 <Tabs defaultValue="about" className="w-full">
-                  <TabsList className="grid w-full grid-cols-3 mb-4 sm:mb-6 bg-white/20 backdrop-blur-sm rounded-lg py-2 gap-3">
-                    <TabsTrigger 
-                      value="about" 
-                      className="capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/30 backdrop-blur-sm "
-                    >
-                      About
-                    </TabsTrigger>
-                    <TabsTrigger 
-                      value="education" 
-                     className="capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/30 backdrop-blur-sm "
-                    >
-                      Education
-                    </TabsTrigger>
-                    <TabsTrigger 
-                      value="interests" 
-                      className="capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/30 backdrop-blur-sm  "
-                    >
-                      Interests
-                    </TabsTrigger>
-                  </TabsList>
-
+                <TabsList className="grid w-full grid-cols-3 gap-5 ">
+                  <TabsTrigger value="about" className="capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/20 backdrop-blur-sm  ">About</TabsTrigger>
+                  <TabsTrigger value="education" className="capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/20 backdrop-blur-sm  ">Education</TabsTrigger>
+                  <TabsTrigger value="interests" className="capitalize hover:shadow-[0_0_20px_#9f7aea] transition-colors cursor-pointer  bg-black/20 backdrop-blur-sm  ">Interests</TabsTrigger>
+                </TabsList>
                   <TabsContent value="about" className="space-y-4 pt-2 sm:pt-4">
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white leading-relaxed">
                       A passionate {personalInfo.title} based in{" "}
@@ -233,7 +216,10 @@ export default function About() {
                     </p>
                   </TabsContent>
 
-                  <TabsContent value="education" className="space-y-4 pt-2 sm:pt-4">
+                  <TabsContent
+                    value="education"
+                    className="space-y-4 pt-2 sm:pt-4"
+                  >
                     <div className="space-y-4 sm:space-y-6">
                       <div className="flex gap-3 sm:gap-4">
                         <div className="mt-1 flex-shrink-0">
@@ -243,7 +229,9 @@ export default function About() {
                           <h4 className="text-base sm:text-lg font-bold text-white">
                             Bachelor of Economic Management
                           </h4>
-                          <p className="text-muted-foreground text-sm sm:text-base">Nagaoka University</p>
+                          <p className="text-muted-foreground text-sm sm:text-base">
+                            Nagaoka University
+                          </p>
                           <p className="text-xs sm:text-sm text-muted-foreground">
                             2020 - 2023
                           </p>
@@ -257,21 +245,32 @@ export default function About() {
                           <h4 className="text-base sm:text-lg font-bold text-white">
                             FullStack developer Certification
                           </h4>
-                          <p className="text-muted-foreground text-sm sm:text-base">Pinecode Academy</p>
-                          <p className="text-xs sm:text-sm text-muted-foreground">2025</p>
+                          <p className="text-muted-foreground text-sm sm:text-base">
+                            Pinecode Academy
+                          </p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">
+                            2025
+                          </p>
                         </div>
                       </div>
                     </div>
                   </TabsContent>
 
-                  <TabsContent value="interests" className="space-y-4 pt-2 sm:pt-4">
+                  <TabsContent
+                    value="interests"
+                    className="space-y-4 pt-2 sm:pt-4"
+                  >
                     <p className="text-white text-sm sm:text-base">
                       When I'm not coding, you can find me:
                     </p>
                     <ul className="space-y-2">
                       {interests.map((interest, index) => (
-                        <li key={index} className="flex items-center gap-2 text-white ml-2 text-sm sm:text-base">
-                          <span className="text-white text-lg">•</span> {interest}
+                        <li
+                          key={index}
+                          className="flex items-center gap-2 text-white ml-2 text-sm sm:text-base"
+                        >
+                          <span className="text-white text-lg">•</span>{" "}
+                          {interest}
                         </li>
                       ))}
                     </ul>
@@ -293,7 +292,9 @@ export default function About() {
                     <p>{personalInfo.location}</p>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-200 mb-1">Availability:</p>
+                    <p className="font-medium text-gray-200 mb-1">
+                      Availability:
+                    </p>
                     <p>{personalInfo.availability}</p>
                   </div>
                 </div>

@@ -65,7 +65,7 @@ export default function Experience() {
             {experiences.map((exp, index) => (
               <VerticalTimelineElement
                 key={index}
-                className="vertical-timeline-element"
+                className="vertical-timeline-element text-white"
                 contentStyle={{
                   background: "hsl(var(--card))",
                   boxShadow: "0 3px 15px rgba(0, 0, 0, 0.1)",
@@ -78,8 +78,8 @@ export default function Experience() {
                 }}
                 date={exp.date}
                 iconStyle={{
-                  background: "hsl(var(--primary))",
-                  color: "hsl(var(--primary-foreground))",
+                  background: "#43055e",
+                  color: "white",
                   boxShadow:
                     "0 0 0 4px hsl(var(--background)), 0 0 0 5px hsl(var(--primary))",
                 }}
@@ -108,7 +108,7 @@ export default function Experience() {
                       <h5 className="font-semibold mb-2 text-white">
                         Key Achievements:
                       </h5>
-                      <ul className="space-y-1">
+                      <ul className="space-y-1 ">
                         {exp.achievements.map((achievement, i) => (
                           <li
                             key={i}
@@ -117,7 +117,7 @@ export default function Experience() {
                             <span className="text-muted-foreground  ml-3">
                               •
                             </span>
-                            <span className="text-muted-foreground">
+                            <span className="text-gray-300">
                               {achievement}
                             </span>
                           </li>
@@ -131,7 +131,10 @@ export default function Experience() {
                       {exp.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 py-1 bg-muted rounded-full text-xs font-medium"
+                          className="px-2 py-1 bg-muted rounded-full text-xs font-medium text-foreground shadow-sm 
+                          hover:bg-muted/80 transition-colors duration-200"
+                         
+                     
                         >
                           {tech}
                         </span>

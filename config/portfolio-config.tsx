@@ -20,7 +20,6 @@ export const personalInfo = {
 export const socialLinks = {
   github: "https://github.com/Ariunjargal-O",
   linkedin: "https://www.linkedin.com/in/ariunjargal-ochirpurev-28ba30300/",
-  twitter: "https://twitter.com/yourusername",
   instagram: "https://www.instagram.com/opti.ari/",
   facebook:
     "https://www.facebook.com/profile.php?id=100010655025939&locale=ja_JP",

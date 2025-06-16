@@ -1,13 +1,16 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { ExternalLink, Github, ArrowRight, Search, X, Layers } from "lucide-react"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { projects } from "../../config/portfolio-config"
+
+
+
 
 export default function Projects() {
   const [filter, setFilter] = useState("all")
