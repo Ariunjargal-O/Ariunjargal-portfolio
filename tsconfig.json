@@ -13,9 +13,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",                     // ← Үүнийг нэм
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]                  // ./src биш, src/*
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {

@@ -23,6 +23,7 @@ import { Footer } from "@/components/Footer";
 
 
 
+
 const ShootingStar: React.FC<{ delay: number }> = ({ delay }) => {
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
   const [endPosition, setEndPosition] = useState({ x: 0, y: 0 });
