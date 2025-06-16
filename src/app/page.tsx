@@ -16,8 +16,8 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { Skills } from "@/components/skills";
-import { HeaderBar } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { HeaderBar } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 
 

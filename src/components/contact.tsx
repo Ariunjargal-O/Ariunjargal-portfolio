@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 export const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
-console.log(publicKey, "public key");
+
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
