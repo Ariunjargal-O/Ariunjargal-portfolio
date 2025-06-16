@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+export const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+console.log(publicKey, "public key");
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
@@ -39,7 +41,10 @@ export default function Contact() {
         "template_ec4dt4e",   // EmailJS template ID
         formRef.current,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "" // EmailJS public key (user ID)
+      
       )
+
+
       .then(
         () => {
           toast("Message sent! Thank you for your message. I'll get back to you soon.");
@@ -54,6 +59,7 @@ export default function Contact() {
           setIsSubmitting(false);
         }
       );
+      console.log( "key", process.env.PUBLIC_KEY || "")
   };
 
   return (

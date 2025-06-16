@@ -75,7 +75,7 @@ export default function Hero() {
                 >
                   <TypeAnimation
                     sequence={["Ariunjargal Ochirpurev", 5000, "Arii", 5000]}
-                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gradient"
+                    className="text-xl sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl text-gradient"
                     wrapper="span"
                     speed={50}
                     repeat={Number.POSITIVE_INFINITY}
