@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { personalInfo, socialLinks } from "../../config/portfolio-config";
 
-export default function Footer() {
+export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialIcons = {

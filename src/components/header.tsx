@@ -1,5 +1,4 @@
 "use client"
-
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {  Menu, X } from "lucide-react"
@@ -9,7 +8,7 @@ interface HeaderProps {
   activeSection: string
 }
 
-export default function HeaderBar({ activeSection }: HeaderProps) {
+export const HeaderBar = ({ activeSection }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
