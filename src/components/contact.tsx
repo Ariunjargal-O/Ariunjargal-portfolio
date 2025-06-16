@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { Mail, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
