@@ -42,7 +42,7 @@ export default function Contact() {
         "service_bgrkysy", // EmailJS service ID
         "template_ec4dt4e", // EmailJS template ID
         formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "" // EmailJS public key (user ID)
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "Mtv7xYzrHZJbbyRGNsjS4" // EmailJS public key (user ID)
       )
 
       .then(
