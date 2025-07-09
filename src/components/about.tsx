@@ -98,7 +98,7 @@ export default function About() {
                       <Image
                         width={600}
                         height={700}
-                        src="/profile.png"
+                        src="https://res.cloudinary.com/drhm9rfyi/image/upload/v1751438136/profile_pswp9c.webp"
                         alt="Ariunjargal Ochirpurev"
                         className="rounded-xl sm:rounded-2xl w-full h-auto transform group-hover:scale-105 transition-all duration-700 filter group-hover:brightness-110 group-hover:contrast-110"
                       />

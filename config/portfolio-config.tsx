@@ -122,8 +122,8 @@ export const projects = [
       "Framer Motion",
       "TypeScript",
     ],
-    demoUrl: "https://last-personal.vercel.app/",
-    githubUrl: "https://github.com/Ariunjargal-O",
+    demoUrl: "https://ariunjargal.vercel.app/",
+    githubUrl: "https://github.com/Ariunjargal-O/Ariunjargal-portfolioo9",
     features: [
       "Responsive design for all devices",
       "Dark/light mode toggle",
@@ -140,11 +140,11 @@ export const projects = [
       "A simple task management application to organize daily activities.",
     longDescription:
       "This task management application helps users organize their work with features like task creation, due dates, priority levels, and status tracking. It was built as part of my learning journey at Pinecone Academy.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752035209/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_ffelvh.png",
     category: "frontend",
     technologies: ["React", "Next,js", "Tailwind Css", "JavaScript"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/Ariunjargal-O",
+    demoUrl: "https://to-do-list-mocha-five-54.vercel.app/",
+    githubUrl: "https://github.com/Ariunjargal-O/To-Do-list",
     features: [
       "Task creation and management",
       "Due dates and priority levels",
@@ -219,7 +219,7 @@ export const projects = [
       "A full-featured online shopping platform with product catalog and cart functionality.",
     longDescription:
       "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033792/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_zdvosr.png",
     category: "frontend",
     technologies: ["HTML", "CSS"],
     demoUrl: "https://ariunjargal-o.github.io/Tesla/",
@@ -420,7 +420,7 @@ export const projects = [
       "A full-featured online shopping platform with product catalog and cart functionality.",
     longDescription:
       "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033665/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_weaolg.png",
     category: "frontend",
     technologies: ["HTML", "CSS"],
     demoUrl: "https://ariunjargal-o.github.io/Solar-system/",
@@ -441,7 +441,7 @@ export const projects = [
       "A full-featured online shopping platform with product catalog and cart functionality.",
     longDescription:
       "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033585/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_tnbgot.png",
     category: "frontend",
     technologies: ["HTML", "CSS"],
     demoUrl: "https://ariunjargal-o.github.io/PineTour/",
