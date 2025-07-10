@@ -137,7 +137,7 @@ export const projects = [
     id: 2,
     title: "To-Do list",
     description:
-      "A simple task management application to organize daily activities.",
+      "A simple and intuitive to-do list app for organizing daily tasks and boosting productivity. ",
     longDescription:
       "This task management application helps users organize their work with features like task creation, due dates, priority levels, and status tracking. It was built as part of my learning journey at Pinecone Academy.",
     image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752035209/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_ffelvh.png",
@@ -187,9 +187,9 @@ export const projects = [
     id: 4,
     title: "Movie websait",
     description:
-      "A full-featured online shopping platform with product catalog and cart functionality.",
+      "A modern movie website showcasing popular films, trailers, and essential movie details using dynamic UI and API integration.",
     longDescription:
-      "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
+      "",
     image: "/placeholder.svg?height=600&width=800",
     category: "frontend",
     technologies: [
@@ -216,9 +216,9 @@ export const projects = [
     id: 5,
     title: "Tesla Front-end",
     description:
-      "A full-featured online shopping platform with product catalog and cart functionality.",
+      "My very first website, built to practice basic HTML, CSS, and layout structure. A simple project that helped me start my web development journey.",
     longDescription:
-      "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
+      "",
     image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033792/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_zdvosr.png",
     category: "frontend",
     technologies: ["HTML", "CSS"],
@@ -237,9 +237,9 @@ export const projects = [
     id: 6,
     title: "Apple Front-End",
     description:
-      "A full-featured online shopping platform with product catalog and cart functionality.",
+      "A modern and responsive Apple front-end clone. My third project, where I learned layout structuring and responsive design techniques.",
     longDescription:
-      "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
+      "My third website project — a front-end clone of Apple’s homepage. Through this project, I learned how to build responsive layouts and apply modern UI principles using clean design and smooth interactions.",
     image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556915/Screen_Shot_2025-06-10_at_19.59.18_vxrjcr.png",
     category: "frontend",
     technologies: ["HTML", "CSS"],
@@ -258,9 +258,9 @@ export const projects = [
     id: 7,
     title: "Food delivery",
     description:
-      "A full-featured online shopping platform with product catalog and cart functionality.",
+      "A simple yet functional food delivery platform developed with React and Node/Express. This project introduced me to full-stack development and API communication.",
     longDescription:
-      "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
+      "A full-stack food delivery web application built with React for the front-end and Express.js for the back-end. This was my first backend project, where I learned to connect APIs, manage data, and handle user interactions across the stack.",
     image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749557366/Screen_Shot_2025-06-10_at_20.07.34_ym7eyd.png",
     category: "fullstack",
     technologies: [
@@ -292,9 +292,9 @@ export const projects = [
     id: 8,
     title: "By me coffee",
     description:
-      "A full-featured online shopping platform with product catalog and cart functionality.",
+      "A full-stack clone of the By Me Coffee website built with React and SQL database. ",
     longDescription:
-      "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
+      "Developed a full-stack clone of the By Me Coffee website using React for the front-end and SQL for the back-end database management. The application includes user-friendly navigation, product displays, and real-time data handling. This project helped me strengthen my skills in connecting front-end interfaces with SQL databases and building scalable web applications.",
     image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749557364/Screen_Shot_2025-06-10_at_20.07.15_qohrvv.png",
     category: "fullstack",
     technologies: [
@@ -325,9 +325,9 @@ export const projects = [
     id: 9,
     title: "Edulab LMS",
     description:
-      "A full-featured online shopping platform with product catalog and cart functionality.",
+      " I developed independently. I designed and implemented all UI components, focusing on user-friendly and responsive learning management system features.",
     longDescription:
-      "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
+      "Edulab LMS is my personal full-stack project, built entirely by myself from design to deployment. I created all the UI/UX elements from scratch, ensuring a clean and intuitive experience. This learning management system includes core features such as course management, user authentication, and progress tracking, demonstrating my ability to handle both front-end and back-end development independently.",
     image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556925/Screen_Shot_2025-06-10_at_20.00.19_kmfm4q.png",
     category: "fullstack",
     technologies: [
@@ -361,9 +361,9 @@ export const projects = [
     id: 10,
     title: "Multi-Steps-Form",
     description:
-      "A full-featured online shopping platform with product catalog and cart functionality.",
+      "A multi-step form project focused on practicing form validation and user input management. ",
     longDescription:
-      "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
+      "Developed a multi-step form to enhance my skills in form validation and state management. The form guides users through multiple stages, validating inputs at each step to ensure data accuracy and improve UX.",
     image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556907/Screen_Shot_2025-06-10_at_20.00.49_xa2pph.png",
     category: "frontend",
     technologies: [
@@ -389,9 +389,9 @@ export const projects = [
     id: 11,
     title: "Snake game",
     description:
-      "A full-featured online shopping platform with product catalog and cart functionality.",
+      "A classic Snake game built with React, demonstrating state management, event handling, and dynamic rendering.",
     longDescription:
-      "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
+      "",
     image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556907/Screen_Shot_2025-06-10_at_20.00.55_oluzby.png",
     category: "frontend",
     technologies: [
@@ -417,7 +417,7 @@ export const projects = [
     id: 12,
     title: "Solar-system",
     description:
-      "A full-featured online shopping platform with product catalog and cart functionality.",
+      "A solar system animation project created to learn and practice CSS and JavaScript animations, illustrating planetary orbits and rotations.",
     longDescription:
       "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
     image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033665/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_weaolg.png",
@@ -438,7 +438,7 @@ export const projects = [
     id: 13,
     title: "Pine-Tour Landing page",
     description:
-      "A full-featured online shopping platform with product catalog and cart functionality.",
+      "A landing page project built to practice CSS flexbox and positioning techniques, including hover effects for interactive UI elements.",
     longDescription:
       "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
     image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033585/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_tnbgot.png",

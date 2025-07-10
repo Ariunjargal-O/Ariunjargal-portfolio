@@ -104,7 +104,7 @@ export default function Projects() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 group-hover:text-white transition-colors text-white/60">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
+                  <p className="text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <Badge key={tech} >
