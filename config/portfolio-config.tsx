@@ -459,14 +459,14 @@ export const projects = [
     id: 14,
     title: "Workplacce2.0",
     description:
-      "A landing page project built to practice CSS flexbox and positioning techniques, including hover effects for interactive UI elements.",
+      "WorkPlace 2.0 is a full-stack e-commerce platform that allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
     longDescription:
       "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033585/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_tnbgot.png",
+    image: "",
     category: "fullstack",
     technologies: ["HTML", "CSS"],
-    demoUrl: "https://ariunjargal-o.github.io/PineTour/",
-    githubUrl: "https://github.com/Ariunjargal-O/PineTour.git",
+    demoUrl: "https://workplace-2-0.vercel.app/",
+    githubUrl: "https://github.com/anhnii-7/workplace-2.0",
     features: [
       "User authentication and profiles",
       "Product catalog with search and filters",
