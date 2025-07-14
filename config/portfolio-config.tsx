@@ -455,6 +455,27 @@ export const projects = [
       "Admin dashboard for product management",
     ],
   },
+  {
+    id: 14,
+    title: "Workplacce2.0",
+    description:
+      "A landing page project built to practice CSS flexbox and positioning techniques, including hover effects for interactive UI elements.",
+    longDescription:
+      "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
+    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033585/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_tnbgot.png",
+    category: "fullstack",
+    technologies: ["HTML", "CSS"],
+    demoUrl: "https://ariunjargal-o.github.io/PineTour/",
+    githubUrl: "https://github.com/Ariunjargal-O/PineTour.git",
+    features: [
+      "User authentication and profiles",
+      "Product catalog with search and filters",
+      "Shopping cart functionality",
+      "Checkout process",
+      "Responsive design",
+      "Admin dashboard for product management",
+    ],
+  },
 ];
 
 // Experience
