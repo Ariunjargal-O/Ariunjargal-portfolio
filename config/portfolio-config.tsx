@@ -457,14 +457,21 @@ export const projects = [
   },
   {
     id: 14,
-    title: "Workplacce2.0",
+    title: "Work place2.0",
     description:
       "WorkPlace 2.0 is a full-stack e-commerce platform that allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
     longDescription:
       "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
-    image: "",
+    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1756396677/workplace2.0_vgps52.png",
     category: "fullstack",
-    technologies: ["HTML", "CSS"],
+      technologies: [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Git"
+    ],
     demoUrl: "https://workplace-2-0.vercel.app/",
     githubUrl: "https://github.com/anhnii-7/workplace-2.0",
     features: [
@@ -484,7 +491,7 @@ export const experiences = [
     title: "Full Stack Developer Student",
     company: "Pinecone Academy",
     location: "Ulaanbaatar, Mongolia",
-    date: "November 2024 - June 2025",
+    date: "November 2024 - August 2025",
     description:
       "Currently studying full stack development, focusing on modern web technologies and best practices.",
     achievements: [
@@ -651,14 +658,15 @@ export const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+976 86981230",
-    link: "tel:+97686981230",
+    value: "+81 080-9004-1586",
+    link: "tel:+818090041586",
   },
   {
     icon: MapPin,
     title: "Location",
-    value: "Ulaanbaatar, Mongolia",
-    link: "https://maps.google.com/?q=Ulaanbaatar,+Mongolia",
+    value: "Tokyo, Japan",
+    // link: "https://maps.google.com/?q=Ulaanbaatar,+Mongolia",
+    link: "https://maps.app.goo.gl/s1dTVuqDhrRKBqtm6",
   },
 ];
 

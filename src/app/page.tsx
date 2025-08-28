@@ -19,11 +19,6 @@ import { Skills } from "@/components/skills";
 import { HeaderBar } from "../components/Header";
 import { Footer } from "../components/footer";
 
-
-
-
-
-
 const ShootingStar: React.FC<{ delay: number }> = ({ delay }) => {
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
   const [endPosition, setEndPosition] = useState({ x: 0, y: 0 });
@@ -33,7 +28,7 @@ const ShootingStar: React.FC<{ delay: number }> = ({ delay }) => {
     const startY = Math.random() * window.innerHeight * 0.7;
     const endX = startX + (Math.random() * 400 + 200);
     const endY = startY + (Math.random() * 200 + 100);
-    
+
     setStartPosition({ x: startX, y: startY });
     setEndPosition({ x: endX, y: endY });
   }, []);
@@ -109,7 +104,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!mounted) return;
-    
+
     // Одод үүсгэх (жижиг тоо - өндөр ачаалал багасгах)
     const newStars = Array.from({ length: 1000 }).map((_, i) => ({
       id: i,
@@ -137,7 +132,10 @@ export default function Home() {
         { id: "skills", element: document.getElementById("skills") },
         { id: "projects", element: document.getElementById("projects") },
         { id: "experience", element: document.getElementById("experience") },
-        { id: "testimonials", element: document.getElementById("testimonials") },
+        {
+          id: "testimonials",
+          element: document.getElementById("testimonials"),
+        },
         { id: "contact", element: document.getElementById("contact") },
       ];
 
@@ -156,7 +154,10 @@ export default function Home() {
         }
       });
 
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 100
+      ) {
         currentSection = "contact";
       }
 
@@ -165,7 +166,7 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial call
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [loading]);
 

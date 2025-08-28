@@ -56,7 +56,12 @@ export const Footer = () => {
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Button asChild size="icon" variant="outline" className="h-9 w-9 sm:h-10 sm:w-10">
+                  <Button
+                    asChild
+                    size="icon"
+                    variant="outline"
+                    className="h-9 w-9 sm:h-10 sm:w-10"
+                  >
                     <Link
                       href={link.href}
                       target="_blank"
@@ -90,7 +95,7 @@ export const Footer = () => {
                 <li key={item}>
                   <Link
                     href={`#${item.toLowerCase()}`}
-                    className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors block py-1"
+                    className="text-sm sm:text-base text-muted-foreground hover:text-white transition-colors block py-1"
                   >
                     {item}
                   </Link>
@@ -108,11 +113,14 @@ export const Footer = () => {
               {/* Email */}
               <li className="flex items-start gap-2">
                 <Mail className="h-4 w-4 text-white mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base text-muted-foreground break-all">
+                <a
+                  href={`mailto:${personalInfo.email}`}
+                  className="text-sm sm:text-base text-muted-foreground break-all hover:text-white transition-colors"
+                >
                   {personalInfo.email}
-                </span>
+                </a>
               </li>
-              
+
               {/* GitHub */}
               <li className="flex items-start gap-2">
                 <Github className="h-4 w-4 text-white mt-0.5 flex-shrink-0" />
@@ -120,12 +128,12 @@ export const Footer = () => {
                   href={socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors break-all"
+                  className="text-sm sm:text-base text-muted-foreground hover:text-white transition-colors break-all"
                 >
                   github.com/Ariunjargal-O
                 </Link>
               </li>
-              
+
               {/* LinkedIn */}
               <li className="flex items-start gap-2">
                 <Linkedin className="h-4 w-4 text-white mt-0.5 flex-shrink-0" />
@@ -133,7 +141,7 @@ export const Footer = () => {
                   href={socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors break-all"
+                  className="text-sm sm:text-base text-muted-foreground hover:text-white transition-colors break-all"
                 >
                   linkedin.com/in/ariunjargal-ochirpurev
                 </Link>
@@ -160,4 +168,4 @@ export const Footer = () => {
       </div>
     </section>
   );
-}
+};
