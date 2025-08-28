@@ -112,7 +112,7 @@ export default function Hero() {
               {/* Location */}
               <p className="flex items-center justify-center lg:justify-start text-white mb-6 lg:mb-10 text-sm sm:text-base">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Mongolia, Ulaanbaatar
+                Tokyo, Japan
               </p>
 
               {/* Action Buttons */}
