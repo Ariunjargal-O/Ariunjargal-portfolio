@@ -4,7 +4,7 @@ import styled from "styled-components";
 const CvDownloadButton = () => {
   return (
     <StyledWrapper>
-      <a href="/CV.pdf" download="OCHIRPUREV ARIUNJARGAL履歴書.pdf" >
+      <a href="/OCHIRPUREV ARIUNJARGAL履歴書.pdf" download="OCHIRPUREV ARIUNJARGAL履歴書.pdf" >
         <button className="button">
           <div className="dots_border" />
           <svg
