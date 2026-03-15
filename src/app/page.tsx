@@ -19,57 +19,11 @@ import { Skills } from "@/components/skills";
 import { HeaderBar } from "../components/Header";
 import { Footer } from "../components/footer";
 
-const ShootingStar: React.FC<{ delay: number }> = ({ delay }) => {
-  const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
-  const [endPosition, setEndPosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight * 0.7;
-    const endX = startX + (Math.random() * 400 + 200);
-    const endY = startY + (Math.random() * 200 + 100);
-
-    setStartPosition({ x: startX, y: startY });
-    setEndPosition({ x: endX, y: endY });
-  }, []);
-
-  return (
-    <motion.div
-      className="absolute"
-      style={{
-        left: startPosition.x,
-        top: startPosition.y,
-      }}
-      initial={{ x: 0, y: 0, opacity: 0 }}
-      animate={{
-        x: endPosition.x - startPosition.x,
-        y: endPosition.y - startPosition.y,
-        opacity: [0, 1, 1, 0.5, 0],
-      }}
-      transition={{
-        duration: Math.random() * 1.5 + 0.8,
-        delay,
-        repeat: Infinity,
-        repeatDelay: Math.random() * 15 + 10,
-        ease: "easeOut",
-      }}
-    >
-      <div
-        className="w-2 h-2 bg-white rounded-full"
-        style={{
-          boxShadow: "0 0 6px #fff, 0 0 12px #87ceeb",
-        }}
-      />
-    </motion.div>
-  );
-};
-
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("home");
   const [mounted, setMounted] = useState(false);
 
-  // Client-side дээр л ажиллах
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -95,8 +49,6 @@ export default function Home() {
     size: number;
     top: number;
     left: number;
-    animationDuration: number;
-    delay: number;
     brightness: number;
   }
 
@@ -105,17 +57,14 @@ export default function Home() {
   useEffect(() => {
     if (!mounted) return;
 
-    // Одод үүсгэх (жижиг тоо - өндөр ачаалал багасгах)
     const newStars = Array.from({ length: 1000 }).map((_, i) => ({
       id: i,
       size:
         Math.random() < 0.9
-          ? Math.random() * 0.8 + 0.2 // Жижиг одод
-          : Math.random() * 1.5 + 1, // Том одод
+          ? Math.random() * 0.8 + 0.2
+          : Math.random() * 1.5 + 1,
       top: Math.random() * 100,
       left: Math.random() * 100,
-      animationDuration: Math.random() * 3 + 3,
-      delay: Math.random() * 5,
       brightness: Math.random() * 0.7 + 0.3,
     }));
 
@@ -139,7 +88,7 @@ export default function Home() {
         { id: "contact", element: document.getElementById("contact") },
       ];
 
-      const scrollPosition = window.scrollY + 200; // Header offset
+      const scrollPosition = window.scrollY + 200;
       let currentSection = "home";
 
       sections.forEach((section) => {
@@ -165,7 +114,7 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial call
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [loading]);
@@ -196,7 +145,7 @@ export default function Home() {
                 "linear-gradient(to bottom, #000011 0%, #001122 100%)",
             }}
           >
-            {/* Хялбар одод - зөвхөн client дээр */}
+            {/* Статик одод - зөвхөн client дээр */}
             {mounted && (
               <div className="absolute inset-0 w-full h-full">
                 {stars.map((star) => (
@@ -211,32 +160,6 @@ export default function Home() {
                       opacity: star.brightness,
                     }}
                   />
-                ))}
-              </div>
-            )}
-
-            {/* Онцгой од */}
-            {mounted && (
-              <div
-                className="absolute w-4 h-4 bg-white rounded-full animate-pulse"
-                style={{
-                  top: "20%",
-                  right: "15%",
-                  boxShadow: `
-                    0 0 10px rgba(255, 255, 255, 0.8),
-                    0 0 20px rgba(255, 255, 255, 0.6),
-                    0 0 30px rgba(135, 206, 235, 0.4),
-                    0 0 40px rgba(135, 206, 235, 0.2)
-                  `,
-                }}
-              />
-            )}
-
-            {/* Унадаг одод */}
-            {mounted && (
-              <div className="absolute inset-0 w-full h-full overflow-hidden">
-                {Array.from({ length: 3 }).map((_, i) => (
-                  <ShootingStar key={i} delay={Math.random() * 10} />
                 ))}
               </div>
             )}

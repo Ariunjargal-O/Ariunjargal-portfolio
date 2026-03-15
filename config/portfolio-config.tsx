@@ -6,8 +6,8 @@ export const personalInfo = {
   nickname: "Arii",
   title: "Full Stack Developer",
   email: "ariunjargal.ochirpurev@gmail.com",
-  phone: "+976 86981230",
-  location: "Ulaanbaatar, Mongolia",
+  phone: "+81 070-2166-8821",
+  location: "Tokyo, Japan",
   bio: "A passionate Full Stack Developer with international experience, currently enhancing my skills at Pinecone Academy.",
   longBio:
     "I am a versatile professional with experience in restaurant management, office administration, and now pursuing a career in full stack development. With a background in economic management from Nagaoka University in Japan, I bring a unique perspective to problem-solving and project development. My journey in web development started recently, and I'm excited to combine my diverse experience with new technical skills.",
@@ -113,7 +113,8 @@ export const projects = [
       "A personal portfolio website showcasing my skills, projects, and experience.",
     longDescription:
       "This responsive portfolio website was built using Next.js and Tailwind CSS. It features smooth animations, dark/light mode, and a contact form. The project helped me strengthen my React skills and learn about responsive design principles.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749557796/Screen_Shot_2025-06-10_at_20.16.15_d8cvq2.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749557796/Screen_Shot_2025-06-10_at_20.16.15_d8cvq2.png",
     category: "frontend",
     technologies: [
       "Next.js",
@@ -140,7 +141,8 @@ export const projects = [
       "A simple and intuitive to-do list app for organizing daily tasks and boosting productivity. ",
     longDescription:
       "This task management application helps users organize their work with features like task creation, due dates, priority levels, and status tracking. It was built as part of my learning journey at Pinecone Academy.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752035209/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_ffelvh.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752035209/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_ffelvh.png",
     category: "frontend",
     technologies: ["React", "Next,js", "Tailwind Css", "JavaScript"],
     demoUrl: "https://to-do-list-mocha-five-54.vercel.app/",
@@ -162,7 +164,8 @@ export const projects = [
       "A weather application showing current conditions and forecasts.",
     longDescription:
       "This weather dashboard provides current conditions and forecasts with features like location search, hourly and daily forecasts, and weather alerts. It uses a third-party weather API to fetch real-time data.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1746350140/g43kt4h2ydt51mmzmajh.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1746350140/g43kt4h2ydt51mmzmajh.png",
     category: "frontend",
     technologies: [
       "React",
@@ -188,8 +191,7 @@ export const projects = [
     title: "Movie websait",
     description:
       "A modern movie website showcasing popular films, trailers, and essential movie details using dynamic UI and API integration.",
-    longDescription:
-      "",
+    longDescription: "",
     image: "/placeholder.svg?height=600&width=800",
     category: "frontend",
     technologies: [
@@ -217,9 +219,9 @@ export const projects = [
     title: "Tesla Front-end",
     description:
       "My very first website, built to practice basic HTML, CSS, and layout structure. A simple project that helped me start my web development journey.",
-    longDescription:
-      "",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033792/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_zdvosr.png",
+    longDescription: "",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033792/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_zdvosr.png",
     category: "frontend",
     technologies: ["HTML", "CSS"],
     demoUrl: "https://ariunjargal-o.github.io/Tesla/",
@@ -240,7 +242,8 @@ export const projects = [
       "A modern and responsive Apple front-end clone. My third project, where I learned layout structuring and responsive design techniques.",
     longDescription:
       "My third website project — a front-end clone of Apple’s homepage. Through this project, I learned how to build responsive layouts and apply modern UI principles using clean design and smooth interactions.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556915/Screen_Shot_2025-06-10_at_19.59.18_vxrjcr.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556915/Screen_Shot_2025-06-10_at_19.59.18_vxrjcr.png",
     category: "frontend",
     technologies: ["HTML", "CSS"],
     demoUrl: "https://ariunjargal-o.github.io/Apple/",
@@ -261,7 +264,8 @@ export const projects = [
       "A simple yet functional food delivery platform developed with React and Node/Express. This project introduced me to full-stack development and API communication.",
     longDescription:
       "A full-stack food delivery web application built with React for the front-end and Express.js for the back-end. This was my first backend project, where I learned to connect APIs, manage data, and handle user interactions across the stack.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749557366/Screen_Shot_2025-06-10_at_20.07.34_ym7eyd.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749557366/Screen_Shot_2025-06-10_at_20.07.34_ym7eyd.png",
     category: "fullstack",
     technologies: [
       "Next.js",
@@ -295,7 +299,8 @@ export const projects = [
       "A full-stack clone of the By Me Coffee website built with React and SQL database. ",
     longDescription:
       "Developed a full-stack clone of the By Me Coffee website using React for the front-end and SQL for the back-end database management. The application includes user-friendly navigation, product displays, and real-time data handling. This project helped me strengthen my skills in connecting front-end interfaces with SQL databases and building scalable web applications.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749557364/Screen_Shot_2025-06-10_at_20.07.15_qohrvv.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749557364/Screen_Shot_2025-06-10_at_20.07.15_qohrvv.png",
     category: "fullstack",
     technologies: [
       "Next.js",
@@ -328,7 +333,8 @@ export const projects = [
       " I developed independently. I designed and implemented all UI components, focusing on user-friendly and responsive learning management system features.",
     longDescription:
       "Edulab LMS is my personal full-stack project, built entirely by myself from design to deployment. I created all the UI/UX elements from scratch, ensuring a clean and intuitive experience. This learning management system includes core features such as course management, user authentication, and progress tracking, demonstrating my ability to handle both front-end and back-end development independently.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556925/Screen_Shot_2025-06-10_at_20.00.19_kmfm4q.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556925/Screen_Shot_2025-06-10_at_20.00.19_kmfm4q.png",
     category: "fullstack",
     technologies: [
       "Next.js",
@@ -345,7 +351,7 @@ export const projects = [
       "Shadcn UI",
       "React",
       "SuperBase",
-      "Git"
+      "Git",
     ],
     demoUrl: "#",
     githubUrl: "https://github.com/Ariunjargal-O",
@@ -357,14 +363,16 @@ export const projects = [
       "Responsive design",
       "Admin dashboard for product management",
     ],
-  },  {
+  },
+  {
     id: 10,
     title: "Multi-Steps-Form",
     description:
       "A multi-step form project focused on practicing form validation and user input management. ",
     longDescription:
       "Developed a multi-step form to enhance my skills in form validation and state management. The form guides users through multiple stages, validating inputs at each step to ensure data accuracy and improve UX.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556907/Screen_Shot_2025-06-10_at_20.00.49_xa2pph.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556907/Screen_Shot_2025-06-10_at_20.00.49_xa2pph.png",
     category: "frontend",
     technologies: [
       "Next.js",
@@ -390,9 +398,9 @@ export const projects = [
     title: "Snake game",
     description:
       "A classic Snake game built with React, demonstrating state management, event handling, and dynamic rendering.",
-    longDescription:
-      "",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556907/Screen_Shot_2025-06-10_at_20.00.55_oluzby.png",
+    longDescription: "",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1749556907/Screen_Shot_2025-06-10_at_20.00.55_oluzby.png",
     category: "frontend",
     technologies: [
       "Next.js",
@@ -400,7 +408,7 @@ export const projects = [
       "JavaScript",
       "Tailwind CSS",
       "Shadcn UI",
-      "Git"
+      "Git",
     ],
     demoUrl: "https://snake1-cyan.vercel.app/",
     githubUrl: "https://github.com/Ariunjargal-O/Snake-Game.git",
@@ -420,7 +428,8 @@ export const projects = [
       "A solar system animation project created to learn and practice CSS and JavaScript animations, illustrating planetary orbits and rotations.",
     longDescription:
       "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033665/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_weaolg.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033665/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_weaolg.png",
     category: "frontend",
     technologies: ["HTML", "CSS"],
     demoUrl: "https://ariunjargal-o.github.io/Solar-system/",
@@ -441,7 +450,8 @@ export const projects = [
       "A landing page project built to practice CSS flexbox and positioning techniques, including hover effects for interactive UI elements.",
     longDescription:
       "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033585/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_tnbgot.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1752033585/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A_tnbgot.png",
     category: "frontend",
     technologies: ["HTML", "CSS"],
     demoUrl: "https://ariunjargal-o.github.io/PineTour/",
@@ -462,15 +472,16 @@ export const projects = [
       "WorkPlace 2.0 is a full-stack e-commerce platform that allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
     longDescription:
       "This e-commerce platform allows users to browse products, add items to cart, and complete the checkout process. It includes user authentication, product filtering, and order management features.",
-    image: "https://res.cloudinary.com/drhm9rfyi/image/upload/v1756396677/workplace2.0_vgps52.png",
+    image:
+      "https://res.cloudinary.com/drhm9rfyi/image/upload/v1756396677/workplace2.0_vgps52.png",
     category: "fullstack",
-      technologies: [
+    technologies: [
       "Next.js",
       "React",
       "JavaScript",
       "Tailwind CSS",
       "Shadcn UI",
-      "Git"
+      "Git",
     ],
     demoUrl: "https://workplace-2-0.vercel.app/",
     githubUrl: "https://github.com/anhnii-7/workplace-2.0",
@@ -522,31 +533,37 @@ export const experiences = [
       "Render",
       "Material UI",
       "Daisy UI",
-      "Figma"
+      "Figma",
     ],
     type: "education",
   },
   {
     title: "Office Manager",
-    company: "New-line Education Center",
-    location: "Ulaanbaatar, Mongolia",
-    date: "September 2024 - April 2025",
+    company: "Atula International Trust Co., Ltd.",
+    location: "Tokyo, Japan",
+    date: "April 2023 - Present",
     description:
-      "Managed office operations and administrative functions for an education center.",
+      "Provided administrative and operational support for international trade and import-related activities.",
     achievements: [
-      "Streamlined administrative processes",
-      "Coordinated with teaching staff and students",
-      "Maintained office records and documentation",
-      "Implemented time management systems",
+      "Assisted with import operations and international trade documentation",
+      "Provided multilingual customer support in Japanese, English, and Mongolian",
+      "Performed data entry, updates, and record management",
+      "Supported preparation and organization of business documents",
+      "Handled email correspondence with clients and partners",
     ],
-    technologies: ["MS Office", "Administrative Systems", "Customer Service"],
+    technologies: [
+      "MS Office",
+      "Data Entry",
+      "Administrative Support",
+      "Customer Service",
+    ],
     type: "work",
   },
   {
     title: "Restaurant Manager",
-    company: "Restaurant",
+    company: "Gindako Highball Restaurant",
     location: "Tokyo, Japan",
-    date: "April 2023 - June 2024",
+    date: "April 2022 - March 2023",
     description:
       "Managed daily operations of a restaurant, including staff supervision, customer service, and inventory management.",
     achievements: [
@@ -622,7 +639,7 @@ export const testimonials = [
   {
     id: 2,
     name: "Former Colleague",
-    role: "New-line Education Center",
+    role: "Atula International Trust ",
     image: "/placeholder.svg?height=100&width=100",
     content:
       "Working with Arii was a pleasure. They brought organization and efficiency to our office operations and were always professional and friendly. Their ability to manage multiple tasks while maintaining quality is remarkable.",
@@ -631,7 +648,7 @@ export const testimonials = [
   {
     id: 3,
     name: "Restaurant Owner",
-    role: "Tokyo Restaurant",
+    role: "Gindaco Highball Restaurant",
     image: "/placeholder.svg?height=100&width=100",
     content:
       "Ariunjargal was an exceptional manager who consistently delivered high-quality service. Their leadership skills and attention to customer satisfaction helped our restaurant thrive. They have a natural talent for team management.",
@@ -641,7 +658,7 @@ export const testimonials = [
 
 // Stats
 export const stats = [
-  { value: "8+", label: "Years in Japan" },
+  { value: "9+", label: "Years in Japan" },
   { value: "3", label: "Languages" },
   { value: "10+", label: "Projects" },
   { value: "3", label: "Countries Lived In" },
@@ -658,8 +675,8 @@ export const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+81 080-9004-1586",
-    link: "tel:+818090041586",
+    value: "+81 070-2166-8821",
+    link: "tel:+8107021668821",
   },
   {
     icon: MapPin,
@@ -678,6 +695,3 @@ export const interests = [
   "Photography",
   "Outdoor activities",
 ];
-
-
- 

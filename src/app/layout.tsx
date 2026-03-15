@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { LanguageProvider } from "context/LanguageContext";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,9 +17,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Arii's Portfolio",
   description: "Welcome to Arii's Portfolio",
-   icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
@@ -27,11 +26,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main> {children}</main>
-        <Toaster />
+        <LanguageProvider>
+          <main>{children}</main>
+          <Toaster />
+        </LanguageProvider>
       </body>
     </html>
   );
